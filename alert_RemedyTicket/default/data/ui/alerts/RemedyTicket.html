@@ -1,0 +1,143 @@
+<form class="form-horizontal form-complex">
+<h1>Remedy Ticket Creator</h1>
+
+    <div class="control-group">
+        <div class="controls">
+            <span class="help-block" style="display: block; position: static; width: auto; margin-left: 0;">
+                Raise a ticket to Remedy. 
+                <br />
+                <a href="{{SPLUNKWEB_URL_PREFIX}}/help?location=learnmore.alert.action.RemedyTicket" target="_blank"
+                   title="Splunk help">Learn More <i class="icon-external"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_TicketSummary">Summary</label>
+        <div class="controls">
+            <input type="text" class="input-xlarge" name="action.RemedyTicket.param.TicketSummary" id="RemedyTicket_TicketSummary" placeholder="Ticket Summary [ Mandatory ]." />
+            <!-- <span class="help-block">[ Mandatory ].</span> -->
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_TicketNotes">Notes</label>
+
+		<div class="controls">
+            <!-- <input type="text" class="input-xlarge" style="height:75px;" name="action.RemedyTicket.param.TicketNotes" id="RemedyTicket_TicketNotes" placeholder="Ticket Notes [ Mandatory ]." /> -->
+            <textarea style="height:75px;" name="action.RemedyTicket.param.TicketNotes" id="RemedyTicket_TicketNotes" placeholder="Ticket Notes [ Mandatory ]."  rows="10" cols="30"></textarea>
+            <!-- <span class="help-block">[ Mandatory ].</span> -->
+        </div>
+    </div>	
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_WorkInfoSummary">Work-Info Summary</label>
+
+        <div class="controls">
+            <input type="text" class="input-xlarge" name="action.RemedyTicket.param.WorkInfoSummary" id="RemedyTicket_WorkInfoSummary" placeholder="Work-Info Summary [ Optional ]." />
+            <!-- <span class="help-block">[ Optional ].</span> -->
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_WorkInfoNotes">Work-Info Notes</label>
+
+		<div class="controls">
+            <!-- <input type="text" class="input-xlarge" style="height:75px;" name="action.RemedyTicket.param.WorkInfoNotes" id="RemedyTicket_TicketNotes" placeholder="Work-Info Notes [ Optional ]." /> -->
+            <textarea style="height:75px;" name="action.RemedyTicket.param.WorkInfoNotes" id="RemedyTicket_TicketNotes" placeholder="Work-Info Notes [ Optional ]."  rows="10" cols="30"></textarea>
+            <!-- <span class="help-block">[ Optional ].</span> -->
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_Priority">Priority</label>
+
+        <div class="controls">
+            <select id="RemedyTicket_Priority" name="action.RemedyTicket.param.Priority">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <span class="help-block">[ Mandatory ].</span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_TroubleSubject">Trouble Subject</label>
+        <div class="controls">
+            <input type="text" class="input-xlarge" name="action.RemedyTicket.param.TroubleSubject" id="RemedyTicket_TroubleSubject" placeholder="Trouble Subject [ Mandatory ]." />
+            <!-- <span class="help-block">[ Mandatory ].</span> -->
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="RemedyTicket_AssigneeArea">Assignee Area</label>
+        <div class="controls">
+            <input type="text" class="input-xlarge" name="action.RemedyTicket.param.AssigneeArea" id="RemedyTicket_AssigneeArea" placeholder="Assignee Area [ Mandatory ]." />
+            <!-- <span class="help-block">[ Mandatory ].</span> -->
+        </div>
+    </div>
+
+
+
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox" for="RemedyTicket_WorkInfoAttachResults">
+                <input type="checkbox" name="action.RemedyTicket.param.WorkInfoAttachResults" id="RemedyTicket_WorkInfoAttachResults" value="1"/>
+                Attach Results to Work-Info Attachments
+            </label>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <div class="controls">
+            <label class="checkbox" for="RemedyTicket_NotesAttachResults">
+                <input type="checkbox" name="action.RemedyTicket.param.NotesAttachResults" id="RemedyTicket_NotesAttachResults" value="1"/>
+                Attach Results to Notes
+            </label>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <script type="text/javascript">
+            function ShowHideDiv(RemedyTicket_SendMailNotification) {
+            var RemedyTicket_EmailAddress = document.getElementById("RemedyTicket_EmailAddress");
+            RemedyTicket_EmailAddress.style.display = RemedyTicket_SendMailNotification.checked ? "block" : "none";
+            }
+        </script>
+        <div class="controls">
+            <label class="checkbox" for="RemedyTicket_SendMailNotification">
+                <input type="checkbox" onclick="ShowHideDiv(this)" name="action.RemedyTicket.param.SendMailNotification" id="RemedyTicket_SendMailNotification" value="1"/>
+                Send Mail Notification
+            </label>
+        </div>
+        <label class="control-label" for="RemedyTicket_EmailAddress">Email Address</label>
+        <div class="controls">
+            <input type="text" class="input-xlarge" name="action.RemedyTicket.param.EmailAddress" id="RemedyTicket_EmailAddress" placeholder="Email Address [ Mandatory if Checked]." />
+            <!-- <span class="help-block">[ Mandatory ].</span> -->
+        </div>
+    </div>
+
+<!--     
+    <div class="control-group">
+        <label class="control-label">RB</label>
+
+        <div class="controls">
+            <label class="radio" for="RemedyTicket_message_format_plain">
+                <input id="RemedyTicket_message_format_plain" type="radio" name="action.RemedyTicket.param.message_format" value="plain" />
+                Plain Text
+            </label>
+            <label class="radio" for="RemedyTicket_message_format_html">
+                <input id="RemedyTicket_message_format_html" type="radio" name="action.RemedyTicket.param.message_format" value="html" />
+                HTML
+            </label>
+        </div>
+    </div>
+ -->
+
+
+</form>
+
+

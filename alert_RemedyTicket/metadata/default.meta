@@ -1,0 +1,13 @@
+[]
+access = read : [ * ], write : [ admin ]
+
+[alert_actions/RemedyTicket]
+access = read : [ * ], write : [ admin ]
+export = system
+owner = nobody
+
+[alerts]
+export = system
+
+[restmap]
+export = system
