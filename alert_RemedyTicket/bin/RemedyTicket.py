@@ -177,8 +177,8 @@ def Handling_Retrieved_Results(results):
       LOG("INFO  sendmodalert - Handling_Retrieved_Results() -- Parsing Results into a List")
       Content=[]
       for line in csvobj:
-	  Content.append(line)
-
+          Content.append(line)
+      
       LOG("INFO  sendmodalert - Handling_Retrieved_Results() -- Returning Results as List")
       LOG("INFO  sendmodalert - Handling_Retrieved_Results() -- Finished")
       return Content
